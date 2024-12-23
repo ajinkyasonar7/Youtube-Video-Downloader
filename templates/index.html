@@ -1,0 +1,43 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Shorts Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Video Downloader</h1>
+        
+        <form id="downloadForm" class="download-form">
+            <div class="input-group">
+                <input type="url" id="videoUrl" name="url" placeholder="Enter YouTube URL" required>
+            </div>
+            
+            <div class="options-group">
+                <select name="resolution" id="resolution">
+                    <option value="highest">Highest Quality</option>
+                    <option value="1080p">1080p</option>
+                    <option value="720p">720p</option>
+                    <option value="480p">480p</option>
+                    <option value="360p">360p</option>
+                </select>
+
+                <select name="format" id="format">
+                    <option value="mp4">MP4 Video</option>
+                    <option value="audio">MP3 Audio</option>
+                </select>
+            </div>
+
+            <button type="submit" class="download-btn">Download</button>
+        </form>
+
+        <div id="downloads" class="downloads-container">
+            <!-- Download items will be added here dynamically -->
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body> 
+</html>
